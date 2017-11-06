@@ -16,6 +16,7 @@ were spaces that human kind deemed ___4___ and worth protecting. ___5___, Mount 
 Wind Cave and Mesa Verde all gained status too, until eventually, in 1916, the National
 Parks System was created. One ___6___ charged with overseeing all aspects of these wildernesses.'''
 
+blanks = ['___1___', '___2___', '___3___', '___4___', '___5___', '___6___']
 easyans = ['moon', 'billion', 'distance', 'Venus']
 mediumans = ['cold', 'Sahara', 'day', 'Gobi', 'sand' ]
 hardans = ['Yellowstone', '1872', 'spread', 'precious', 'Yosemite', 'entity']
