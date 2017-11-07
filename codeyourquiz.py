@@ -44,18 +44,20 @@ def level_selector():
 		return level_selector()
 
 # replace blanks with answer
-#def replace_blank (blank_number, useranswer):
+def replace_blank (blank_number, useranswer):
 
-#def get_outcome (level, quiz, answers):
-#	number_of_blanks = len(answers)
-#	while tries != 0 or 
-
+def get_outcome (level, quiz, answers):
+	tries = maxtries
+	while tries
+	print quiz
+	number_of_blanks = len(answers)
+	while tries != 0 or 
+#
 
 
 def main_game():
 	print '\nPlaying Fill-In-The-Blank Game...\n'
 	level, quiz, answers = level_selector()
-#	tries = maxtries
 	if get_outcome(level, quiz, answers):
        	print 'Congratulations, you won!'
 	else:		
