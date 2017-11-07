@@ -11,14 +11,14 @@ always ___1___, like the ___4___ desert in Asia and the desert on the continent 
 Others are mountainous. Only about 10 percent of deserts are covered by ___5___ dunes.'''
 hardq = '''___1___ was the first national park ever to exist, designated in ___2___. Its status
 sparked an idea that ___3___ across the country and then across the world. National parks
-were spaces that human kind deemed ___4___ and worth protecting. ___5___, Mount Rainier,
+were spaces that ___4___ deemed precious and worth protecting. ___5___, Mount Rainier,
 Wind Cave and Mesa Verde all gained status too, until eventually, in 1916, the National
 Parks System was created. One ___6___ charged with overseeing all aspects of these wildernesses.'''
 
 #Quiz answers:
 easyans = ['moon', 'billion', 'distance', 'Venus']
 mediumans = ['cold', 'Sahara', 'day', 'Gobi', 'sand' ]
-hardans = ['Yellowstone', '1872', 'spread', 'precious', 'Yosemite', 'entity']
+hardans = ['Yellowstone', '1872', 'spread', 'humankind', 'Yosemite', 'entity']
 
 # Blank spaces 
 blanks = ['___1___', '___2___', '___3___', '___4___', '___5___', '___6___']
@@ -46,24 +46,19 @@ def level_selector():
 # replace blanks with answer
 #def replace_blank (blank_number, useranswer):
 
-#def get_answer (level, quiz, answers):
+#def get_outcome (level, quiz, answers):
+#	number_of_blanks = len(answers)
+#	while tries != 0 or 
+
+
 
 def main_game():
 	print '\nPlaying Fill-In-The-Blank Game...\n'
 	level, quiz, answers = level_selector()
-#	print level
-#	print quiz
-#	print answers
-#	print len(answers)	
-	tries = maxtries
-	number_of_blanks = len(answers)
-	while tries != 0 or 
-		
-
-'''
-    if outcome():
+#	tries = maxtries
+	if get_outcome(level, quiz, answers):
        	print 'Congratulations, you won!'
 	else:		
 		print 'Sorry, you lost.'
-'''
+
 main_game ()
