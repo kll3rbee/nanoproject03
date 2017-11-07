@@ -9,8 +9,8 @@ parts_of_speech  = ["PLACE", "PERSON", "PLURALNOUN", "NOUN"]
 
 test_string = """This is PLACE, no NOUN named PERSON, We have so many PLURALNOUN around here."""
 split_tststr = test_string.split()
-#print split_tststr
-#print '*'*20
+print split_tststr
+print '*'*20
 def word_in_pos(word, parts_of_speech):
     for pos in parts_of_speech:
         if pos in word:
