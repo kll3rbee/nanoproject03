@@ -27,18 +27,18 @@ blanks = ['___1___', '___2___', '___3___', '___4___', '___5___', '___6___']
 maxtries = 3
 
 # replace blanks with answer
-def update_quiz (quiz, answers, blanks_to_replace):
-    replaced = []
-    blank_index = 0
-    split_quiz = quiz.split()
-    for i in split_quiz:
-    	if i == blanks[blank_index]
-    		i = answers[blank_index]
-    		replaced.append(i)
-    		blank_index += 1
-    	else:
-    		replaced.append(i)
-    return " ".join(replaced)
+def update_quiz (quiz, answers, index):
+	replaced = []
+	blank_index = 0
+	split_quiz = quiz.split()
+	for i in split_quiz:
+		if i == blanks[blank_index] and blank_index <= index:
+			i = answers[blank_index]
+			replaced.append(i)
+			blank_index += 1
+		else:
+			replaced.append(i)
+	return " ".join(replaced)
 
 '''	
 	replaced = quiz
@@ -51,25 +51,25 @@ def update_quiz (quiz, answers, blanks_to_replace):
 #get and check answer
 def getans_and_check (quiz, current_answer, blank_index):
 	useranswer = raw_input('\nWhat is your answer for ' + str(blank_index) + ' ? ')
-	if useranswer.lower() == current_answer.lower():
+	if useranswer.lower() == current_answer.lower(): #to avoid being case sensitive
 		print '\nYou are right.\n'
 		return True
 	else:
-		print '\nYou are wrong.\n'
+		print '\nSorry, you are wrong.\n'
 		return False
 
 # get outcome of the game
 def get_outcome (quiz, answers):
 	tries = maxtries
-	blank_index = 0
+	index = 0
 	print quiz #print initial quiz with all blanks
-	while tries != 0 and blank_index < len(answers):
-		if getans_and_check(quiz, answers[blank_index], blank_index + 1):
-			print update_quiz(quiz, blank_index, answers)
-			blank_index += 1
+	while tries != 0 and index < len(answers):
+		if getans_and_check(quiz, answers[index], index + 1):
+			print update_quiz(quiz, answers, index) # print quiz with current correct answers
+			index += 1
 		else:
 			tries -= 1
-			print 'You have only ' + str(tries) + ' trie(s).'
+			print 'You have ' + str(tries) + ' tries left.'
 	if tries == 0:
 		return False
 	else:
