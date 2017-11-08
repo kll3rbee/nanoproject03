@@ -40,14 +40,6 @@ def update_quiz (quiz, answers, index):
 			replaced.append(i)
 	return " ".join(replaced)
 
-'''	
-	replaced = quiz
-	print cblank
-	for i in range (cblank):
-		replaced = quiz.replace(blanks[i], answers[i])
-		print replaced
-	return replaced
-'''
 #get and check answer
 def getans_and_check (quiz, current_answer, blank_index):
 	useranswer = raw_input('\nWhat is your answer for ' + str(blank_index) + ' ? ')
