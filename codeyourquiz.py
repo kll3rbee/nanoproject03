@@ -23,44 +23,82 @@ hardans = ['Yellowstone', '1872', 'spread', 'humankind', 'Yosemite', 'entity']
 # Blank spaces 
 blanks = ['___1___', '___2___', '___3___', '___4___', '___5___', '___6___']
 
-# Tries 
+# Maximum tries
 maxtries = 3
 
+# replace blanks with answer
+def update_quiz (quiz, answers, blanks_to_replace):
+    replaced = []
+    blank_index = 0
+    split_quiz = quiz.split()
+    for i in split_quiz:
+    	if i == blanks[blank_index]
+    		i = answers[blank_index]
+    		replaced.append(i)
+    		blank_index += 1
+    	else:
+    		replaced.append(i)
+    return " ".join(replaced)
 
+'''	
+	replaced = quiz
+	print cblank
+	for i in range (cblank):
+		replaced = quiz.replace(blanks[i], answers[i])
+		print replaced
+	return replaced
+'''
+#get and check answer
+def getans_and_check (quiz, current_answer, blank_index):
+	useranswer = raw_input('\nWhat is your answer for ' + str(blank_index) + ' ? ')
+	if useranswer.lower() == current_answer.lower():
+		print '\nYou are right.\n'
+		return True
+	else:
+		print '\nYou are wrong.\n'
+		return False
+
+# get outcome of the game
+def get_outcome (quiz, answers):
+	tries = maxtries
+	blank_index = 0
+	print quiz #print initial quiz with all blanks
+	while tries != 0 and blank_index < len(answers):
+		if getans_and_check(quiz, answers[blank_index], blank_index + 1):
+			print update_quiz(quiz, blank_index, answers)
+			blank_index += 1
+		else:
+			tries -= 1
+			print 'You have only ' + str(tries) + ' trie(s).'
+	if tries == 0:
+		return False
+	else:
+		return True
+
+# define the quiz and answer for the level
 def level_selector():
 	print 'Select the level of difficulty to begin.'
 	level = raw_input('Level (1)easy (2)medium (3)hard: ')
 	if level == '1':
 		print '\nLets start easy level..\n'
-		return int(level), easyq, easyans
+		return easyq, easyans
 	elif level == '2':
 		print '\nLets start medium level..\n'
-		return int(level), mediumq, mediumans
+		return mediumq, mediumans
 	elif level == '3':
 		print '\nLets start hard level..\n'
-		return int(level), hardq, hardans
+		return hardq, hardans
 	else:
 		print '\nLevel out of range, please select from 1 to 3.\n'
 		return level_selector()
 
-# replace blanks with answer
-def replace_blank (blank_number, useranswer):
-
-def get_outcome (level, quiz, answers):
-	tries = maxtries
-	while tries
-	print quiz
-	number_of_blanks = len(answers)
-	while tries != 0 or 
-#
-
-
+# main procedure
 def main_game():
 	print '\nPlaying Fill-In-The-Blank Game...\n'
-	level, quiz, answers = level_selector()
-	if get_outcome(level, quiz, answers):
-       	print 'Congratulations, you won!'
+	quiz, answers = level_selector()
+	if get_outcome(quiz, answers):
+		print '\nCongratulations, you WON!'
 	else:		
-		print 'Sorry, you lost.'
+		print '\nSorry, you LOST.'
 
 main_game ()
